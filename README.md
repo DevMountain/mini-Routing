@@ -146,7 +146,8 @@ Notice that we have a side menu and then we have our `<div ui-view></div>` that 
 * Now that our ````<div ui-view></div>```` is set up, let's head over to app.js and actually prepare our router.
 * You have the code below but I want you to really try to not look at it until you've completed all of these next steps. I promise it's really not too tricky, just try your best and ask for help if you get stuck.
 
-* 1) add a config property onto your app variable that takes in a anonymous function as it's only argument.
+* 1) add a config property onto your module variable that takes in a anonymous function as it's only argument.
+      ```angular.module('mini-routing', ['ui.router']).config(function() {});```
 * 2) inject ```$stateProvider``` and ```$urlRouterProvider``` into that anonymous function you just built.
 * 3) Now we're going to set up our routes. Here is the criteria.
     - use the ```state``` method of ```$stateProvider``` to create a state called ```home``` that uses ```homeTmpl.html``` as the templateUrl, ```homeCtrl``` as the controller and ('/') as the url.

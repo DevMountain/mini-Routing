@@ -14,7 +14,7 @@ The purpose of this Mini Project is to get you used to structuring your Angular 
     js
       app.js
 ```
-Remember to include ng-app in your application and call your module 'miniRouting'. Also, remember to include the Angular CDN as a script in your HTML, along with app.js. Go ahead and create your 'miniRouting' module in your app.js file. Once you're done doing that, add these styles to your style.css page.
+Remember to include ng-app in your application and call your module 'miniRouting'. Also, remember to include the Angular CDN as a script in your HTML, along with app.js. Go ahead and create your 'miniRouting' module in your app.js file. Once you're done doing that, add these styles to your style.css page (don't forget to link it to your index).
 ```css
 html, body {
   margin: 0;
@@ -40,7 +40,7 @@ html, body {
 ```
 
 ###Step 2: Add Routing Skeleton
-* Right now, you should have a very basic Angular application that has nothing more than an app.js (which created your 'miniRouting' module) and an index.html page. Check your console to make sure there are no errors. If there are, debug.
+* Right now, you should have a very basic Angular application that has nothing more than an app.js (which created your 'miniRouting' module), an index.html page, and some styles. Check your console to make sure there are no errors. If there are, debug.
 * Now we're going to prep our HTML in order to start using UI Router. 
 * Before we use the UI Router module to handle our routing, there are a few steps we need to take. First, we need to include UI Router as a script, after the Angular library script, in our HTML page. You can find the CDN by googling 'cdn ui router'.
 * Once you've included UI Router as a script, we need to inject UI Router into our app as a dependency. Remember how we talked about how our app.js is the hub of our application and it's the only place we use ```angular.module('appName', [])``` with the empty array? The reason that empty array exists is because it's where we inject dependencies into our application. Head over to app.js and add 'ui.router' as a dependency.
@@ -50,8 +50,8 @@ angular.module('miniRouting', ['ui.router']);
 ```
 
 ###Step 3: Revamp Folder Structure
-* As we discussed in the lesson, Angular can dynamically change the template or controller based on what the URL is. For example, if we're at '/users' we can tell Angular to use the 'userController' controller as well as the 'userTemplate' html sheet (or view). 
-* As you can imagine, your app starts to get really large as you have different routes. The Angular community has found that the best way to organize your application is by feature. For example, in our app we're going to have a home page, a products page, and a settings page. Go ahead and create those three folders so that your file structure looks like this:
+* As we discussed in the lesson, Angular can dynamically change the template or controller based on what the URL is. For example, if we're at '/users' we can tell Angular to use the 'userCtrl' controller as well as the 'userTemplate' html sheet (or view). 
+* As you can imagine, your app starts to get really large as you have different routes. The Angular community has found that the best way to organize your application is by feature. For example, in our app we're going to have a home page, a products page, and a settings page. Go ahead and create those three folders and the files listed below so that your file structure looks like this:
 ```
   mini-routing
     index.html
@@ -146,7 +146,7 @@ Notice that we have a side menu and then we have our `<div ui-view></div>` that 
 * Now that our ````<div ui-view></div>```` is set up, let's head over to app.js and actually prepare our router.
 * You have the code below but I want you to really try to not look at it until you've completed all of these next steps. I promise it's really not too tricky, just try your best and ask for help if you get stuck.
 
-* 1) add a config property onto your module variable that takes in a anonymous function as it's only argument.
+* 1) add a config property onto your module that takes in an anonymous function as its only argument.
       ```angular.module('mini-routing', ['ui.router']).config(function() {});```
 * 2) inject ```$stateProvider``` and ```$urlRouterProvider``` into that anonymous function you just built.
 * 3) Now we're going to set up our routes. Here is the criteria.

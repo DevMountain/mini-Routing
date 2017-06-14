@@ -1,10 +1,10 @@
 mini-Routing
 ============
 
-##Objectives
+## Objectives
 The purpose of this Mini Project is to get you used to structuring your Angular app and routing. These are two of the trickiest things to wrap your head around so if something doesn't make sense as you're going through, let us know and we'll come over to help you. 
 
-###Step 1: Angular Skeleton 
+### Step 1: Angular Skeleton 
 * Fork this repo, then clone your fork.
 * Create the basics of your Angular application. Your file structure should look like this
 ```
@@ -39,7 +39,7 @@ html, body {
 } 
 ```
 
-###Step 2: Add Routing Skeleton
+### Step 2: Add Routing Skeleton
 * Right now, you should have a very basic Angular application that has nothing more than an app.js (which created your 'miniRouting' module), an index.html page, and some styles. Check your console to make sure there are no errors. If there are, debug.
 * Now we're going to prep our HTML in order to start using UI Router. 
 * Before we use the UI Router module to handle our routing, there are a few steps we need to take. First, we need to include UI Router as a script, after the Angular library script, in our HTML page. You can find the CDN by googling 'cdn ui router'.
@@ -49,7 +49,7 @@ html, body {
 angular.module('miniRouting', ['ui.router']);
 ```
 
-###Step 3: Revamp Folder Structure
+### Step 3: Revamp Folder Structure
 * As we discussed in the lesson, Angular can dynamically change the template or controller based on what the URL is. For example, if we're at '/users' we can tell Angular to use the 'userCtrl' controller as well as the 'userTemplate' html sheet (or view). 
 * As you can imagine, your app starts to get really large as you have different routes. The Angular community has found that the best way to organize your application is by feature. For example, in our app we're going to have a home page, a products page, and a settings page. Go ahead and create those three folders and the files listed below so that your file structure looks like this:
 ```
@@ -117,7 +117,7 @@ angular.module('miniRouting').service('productService', function(){
 ```
 * Note: it's just filler data that we're going to use later.
 
-###Step 4: Revamp index.html
+### Step 4: Revamp index.html
 * What's nice about routing is that we can have certain parts of the page be static (it never changes), while other parts of the page are dynamic (changes) based on the URL. What we're going to do is have a side menu that will always stay the same no matter what page the user is on. Then, we'll use ```<div ui-view></div>``` which will be where our router kicks in. 
 * Head over to your index.html page and inside the body above your script tags add this template
 ```html
@@ -142,7 +142,7 @@ angular.module('miniRouting').service('productService', function(){
 
 Notice that we have a side menu and then we have our `<div ui-view></div>` that will change depending on our router (which we will specify in our next step).
 
-###Step 5: Routing
+### Step 5: Routing
 * Now that our ````<div ui-view></div>```` is set up, let's head over to app.js and actually prepare our router.
 * You have the code below but I want you to really try to not look at it until you've completed all of these next steps. I promise it's really not too tricky, just try your best and ask for help if you get stuck.
 
@@ -181,7 +181,7 @@ angular.module('miniRouting', ['ui.router']).config(function ($stateProvider, $u
         .otherwise('/');
 });
 ```
-###Step 6: Adding to Template
+### Step 6: Adding to Template
 * In order for us to know if our routes are working, we need to edit all of our templates to show some sort of confirmation that we're on a certain page. Make the following changes:
 * settingsTmpl.html should look like this
 ```html
@@ -201,7 +201,7 @@ angular.module('miniRouting', ['ui.router']).config(function ($stateProvider, $u
 * Test that everything is working by clicking on a few of the links to see if the templates change based on which link you clicked on. If it's not working, first check your console to see if there are any errors. Try to debug, if you debug for 5 minutes and are still stuck, ask for help.
 * 
 
-###Step 7: Fixing Product Pages
+### Step 7: Fixing Product Pages
 * The last thing we have to do is show certain product data depending on which page the user is on. For example, if the user is on the shoes page, we want to show them the shoes data. If they're on the socks page, we want to show them the socks data. Remember that in our index.html page our menu looks like this: 
 ```html
     <div class="menu">
